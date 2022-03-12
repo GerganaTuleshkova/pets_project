@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block page_content %}
+
+
+    <div class="container">
+        <h1 class="text-center">Add a New Pet Photo</h1>
+        <div class="row">
+            <div class="col-lg-3"></div>
+            <div class="col-lg-6">
+                <form method="post"
+                      enctype="multipart/form-data"
+                      action="{% url 'add photo' %}">
+
+                    <!-- Form for Adding Photos -->
+                    {{ form }}
+                    {% csrf_token %}
+                    <button class="btn btn-primary mt-2" type="submit">Create</button>
+                </form>
+            </div>
+            <div class="col-lg-3"></div>
+        </div>
+    </div>
+
+{% endblock %}
